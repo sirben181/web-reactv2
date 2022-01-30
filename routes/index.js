@@ -1,6 +1,6 @@
 const express=require('express')
 const router=express.Router()
-const posts=require('./../models/posts')
+const post=require('../models/posts')
 
 //home route
 router.route('/').get((req,res)=>{
@@ -9,7 +9,7 @@ router.route('/').get((req,res)=>{
 
 //posts routes
 router.route('/posts').get((req,res)=>{
-    posts.find()
+    post.find()
     .then(posts=>res.json(posts))
     .catch(err=>res.status(400).json('Error: '+ err))
 });
@@ -17,7 +17,7 @@ router.route('/add').post((req,res)=>{
   const title=req.body.title;
   const body=req.body.body;
   const author=req.body.author;
-  const newPost=new posts({
+  const newPost=new post({
       title,
       body,
       author, 
