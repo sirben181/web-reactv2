@@ -1,17 +1,12 @@
 const mongoose=require('mongoose')
 
+const postSchema=  new mongoose.Schema({
+    title:{type:String, required:true},
+    createdAt:{type:Date, default: Date.now},
+    author:{type: String, required:true},
+    body:{type: String, required:true}
+    
 
-const postSchema=  new mongoose.Schema({})
-// posts schema should have 
-// post{
- //    head:head,
-//    post-body,
-//     post footer{
-    //  dataposted,
-    // author
-// }
-//    image,
-//    created date
-//   
-// }//
-module.exports=mongoose.model()
+}) 
+ 
+module.exports=mongoose.model('posts',postSchema)
