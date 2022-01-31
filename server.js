@@ -15,11 +15,14 @@ app.use(cors())
 app.use(express.json())
 
 app.use(express.urlencoded({
-    extended: true
+    extended: false
 }));
 
 app.use('/',require('./routes/index'))
 app.use('/posts',require('./routes/index'))
+app.use('/posts/:id',require('./routes/index'))
+// app.use('/posts/:id',require('./routes/index'))
+
 app.listen(PORT,()=>{
     console.log(`Server running on port ${PORT}`)
 })
