@@ -29,7 +29,7 @@ app.get('/',(req,res,next)=>{
 
 // app.use('/',require('./routes/index'))
 
-app.use('/posts',postsRouter)
+app.use('/',postsRouter)
 
 // app.use('/posts/:id',require('./routes/index'))
 // app.use('/posts/:id',require('./routes/index'))
