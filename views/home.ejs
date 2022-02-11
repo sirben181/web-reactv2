@@ -14,19 +14,19 @@
     <form action="/posts/add" method="post">
         <div class="form-group">
         <label for="title">Title:</label> 
-        <input type="text" id='title' class="form-control">
+        <input type="text" id='title' class="form-control" required>
     </div>
     <div class="form-group">
         <label for="author">Author:</label> 
-        <input type="text" id='author' class="form-control">
+        <input type="text" id='author' class="form-control" required>
     </div>
     <div class="form-group">
         <label for="description">description:</label> 
-        <textarea id='description' class="form-control"></textarea>
+        <textarea id='description' class="form-control" required></textarea>
     </div> 
     <div class="form-group">
         <label for="markdown">Markdown:</label> 
-        <textarea name='markdown' id='markdown' class="form-control"></textarea>
+        <textarea name='markdown' id='markdown' class="form-control" required></textarea>
     </div>
     
 </form>

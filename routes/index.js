@@ -21,25 +21,22 @@ router.route('/posts/:id').get((req,res)=>{
     .catch(err=>res.status(400).json('Error:' +err))
 })
 // this adding route
+// post req
 router.route('/posts/add').post(async(req,res)=>{
   const title=req.body.title;
-  const createdAt =req.body.createdAt;
   const author=req.body.author;
   const description=req.body.description;
-//   const category=req.body.category;
   const markdown=req.body.markdown;
   const newPost=new post({
       title,
       author, 
       description,
-      markdown,
-      createdAt,
-      
+      markdown
+       
   })
   try{
-      postSaved = await newPost.save()
+    const  postSaved = await newPost.save()
  res.json('Post added')
-  console.log(postSaved)
     }catch(err){
         console.log('Error: ' + err)
         return res.status(400).json({err : 'err occurred when trying to save the post'})
